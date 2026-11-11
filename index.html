@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>م. عبد الرحمن مغربي | مهندس اتصالات وإلكترونيات</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Cairo & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0a0f1d',
+                            card: '#111827',
+                            cardBorder: '#1f2937',
+                            accent: '#06b6d4', // Cyan 500
+                            blue: '#3b82f6',   // Blue 500
+                            neon: '#00f2fe',
+                        }
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #060913;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+        
+        .glass-card {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(6, 182, 212, 0.4);
+            box-shadow: 0 0 25px rgba(6, 182, 212, 0.15);
+        }
+
+        .neon-border {
+            position: relative;
+        }
+
+        .neon-border::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #06b6d4, #3b82f6, transparent);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .pulse-dot {
+            animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        @media print {
+            .no-print { display: none !important; }
+            body { background-color: #fff !important; color: #000 !important; }
+            .glass-card { background: none !important; border: 1px solid #ccc !important; color: #000 !important; }
+            .gradient-text { -webkit-text-fill-color: #000 !important; }
+        }
+    </style>
+</head>
+<body class="selection:bg-cyan-500 selection:text-black">
+
+    <!-- Background Tech Glow Effects -->
+    <div class="fixed top-0 right-1/4 w-96 h-96 bg-cyan-600/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+    <div class="fixed bottom-10 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 right-0 left-0 z-50 glass-card border-b border-gray-800/50 transition-all duration-300 no-print" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo / Title -->
+                <a href="#hero" class="flex items-center space-x-3 space-x-reverse group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center font-bold text-black text-xl shadow-lg shadow-cyan-500/30 group-hover:scale-105 transition-transform">
+                        AM
+                    </div>
+                    <span class="text-lg font-bold tracking-wide text-white">م. عبد الرحمن مغربي</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-1 space-x-reverse text-sm font-medium">
+                    <a href="#about" class="px-3 py-2 rounded-lg hover:text-cyan-400 hover:bg-gray-800/50 transition">عني والتطور الحالي</a>
+                    <a href="#education" class="px-3 py-2 rounded-lg hover:text-cyan-400 hover:bg-gray-800/50 transition">التعليم والشهادات</a>
+                    <a href="#courses" class="px-3 py-2 rounded-lg hover:text-cyan-400 hover:bg-gray-800/50 transition">الدورات التدريبية</a>
+                    <a href="#experience" class="px-3 py-2 rounded-lg hover:text-cyan-400 hover:bg-gray-800/50 transition">الخبرات العملية</a>
+                    <a href="#languages" class="px-3 py-2 rounded-lg hover:text-cyan-400 hover:bg-gray-800/50 transition">اللغات والمهارات</a>
+                    <a href="#contact" class="px-3 py-2 rounded-lg hover:text-cyan-400 hover:bg-gray-800/50 transition">التواصل</a>
+                </div>
+
+                <!-- Action Button -->
+                <div class="hidden md:flex items-center gap-3">
+                    <button onclick="window.print()" class="flex items-center gap-2 text-xs px-4 py-2 rounded-lg border border-cyan-500/40 text-cyan-400 hover:bg-cyan-500/10 transition">
+                        <i class="fa-solid fa-print"></i> طباعة / CV
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white p-2 rounded-lg focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-800 bg-gray-900/95 px-4 pt-2 pb-4 space-y-2 text-sm">
+            <a href="#about" class="block px-3 py-2 rounded-lg hover:bg-gray-800 text-gray-200">عني والتطور الحالي</a>
+            <a href="#education" class="block px-3 py-2 rounded-lg hover:bg-gray-800 text-gray-200">التعليم والشهادات</a>
+            <a href="#courses" class="block px-3 py-2 rounded-lg hover:bg-gray-800 text-gray-200">الدورات التدريبية</a>
+            <a href="#experience" class="block px-3 py-2 rounded-lg hover:bg-gray-800 text-gray-200">الخبرات العملية</a>
+            <a href="#languages" class="block px-3 py-2 rounded-lg hover:bg-gray-800 text-gray-200">اللغات والمهارات</a>
+            <a href="#contact" class="block px-3 py-2 rounded-lg hover:bg-gray-800 text-gray-200">التواصل</a>
+            <button onclick="window.print()" class="w-full text-right px-3 py-2 rounded-lg bg-cyan-500/10 text-cyan-400 font-semibold mt-2">
+                <i class="fa-solid fa-print ml-2"></i> طباعة / تحميل CV
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 space-y-24">
+
+        <!-- 1. Hero Section -->
+        <section id="hero" class="min-h-[80vh] flex flex-col justify-center items-center text-center relative py-12">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-xs sm:text-sm text-cyan-400 mb-8 border border-cyan-500/30">
+                <span class="w-2 h-2 rounded-full bg-cyan-400 pulse-dot"></span>
+                <span>مهندس اتصالات وإلكترونيات متاح للفرص الجديدة</span>
+            </div>
+
+            <!-- Full Name -->
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight mb-4">
+                عبد الرحمن محمد حسن
+                <span class="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-400 mt-2">
+                    أحمد مغربي
+                </span>
+            </h1>
+
+            <!-- English Name & Title -->
+            <p class="text-lg sm:text-2xl font-semibold text-gray-300 mb-6 font-inter tracking-wide">
+                Abdelrahman Mohamed Hassan Ahmed Magrabi
+            </p>
+            <p class="text-base sm:text-xl text-cyan-400 font-medium max-w-2xl mb-10">
+                Electronic & Communication Engineer
+            </p>
+
+            <!-- Quick Contact Info Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-3xl mb-10 text-sm">
+                <a href="mailto:abdelrahmanmaghrabyyy@gmail.com" class="glass-card p-4 rounded-xl flex items-center justify-center gap-3 hover:border-cyan-400 transition group">
+                    <i class="fa-solid fa-envelope text-cyan-400 text-lg group-hover:scale-110 transition"></i>
+                    <span class="text-gray-300 group-hover:text-white truncate font-inter">abdelrahmanmaghrabyyy@gmail.com</span>
+                </a>
+                <a href="tel:+201127705111" class="glass-card p-4 rounded-xl flex items-center justify-center gap-3 hover:border-cyan-400 transition group">
+                    <i class="fa-solid fa-phone text-cyan-400 text-lg group-hover:scale-110 transition"></i>
+                    <span class="text-gray-300 group-hover:text-white font-inter">+20 112 770 5111</span>
+                </a>
+                <div class="glass-card p-4 rounded-xl flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-location-dot text-cyan-400 text-lg"></i>
+                    <span class="text-gray-300">السيدة زينب، القاهرة، مصر</span>
+                </div>
+            </div>
+
+            <!-- Call To Actions -->
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#contact" class="px-8 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-black font-bold text-base hover:shadow-lg hover:shadow-cyan-500/25 hover:scale-105 transition-all">
+                    تواصل معي مباشر <i class="fa-solid fa-arrow-left mr-2"></i>
+                </a>
+                <a href="#education" class="px-8 py-3.5 rounded-xl glass-card text-white font-semibold text-base hover:bg-gray-800 hover:border-gray-600 transition-all">
+                    عرض الشهادات <i class="fa-solid fa-certificate mr-2 text-cyan-400"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- 2. About & Current Focus Section -->
+        <section id="about" class="scroll-mt-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="p-3 rounded-xl bg-cyan-500/10 text-cyan-400 text-xl border border-cyan-500/20">
+                    <i class="fa-solid fa-user-astronaut"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white">عني والتطور الحالي</h2>
+                    <p class="text-gray-400 text-sm">About & Current Activities</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Brief Intro -->
+                <div class="glass-card p-6 sm:p-8 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-cyan-300 mb-4">نبذة مهنية</h3>
+                        <p class="text-gray-300 leading-relaxed text-justify mb-6">
+                            مهندس اتصالات وإلكترونيات حاصل على بكالوريوس الهندسة، أمتلك شغفاً كبيراً بتطوير شبكات الاتصال وبنيتها التحتية، مع خلفية متميزة في خدمة العملاء والتنظيم والإدارة. أسعى باستمرار لتطوير مهاراتي التقنية واللغوية لمواكبة أحدث تقنيات الشبكات العالمية.
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 text-sm text-gray-400 border-t border-gray-800 pt-4">
+                        <i class="fa-solid fa-graduation-cap text-cyan-400"></i> خريج EGI Academy
+                    </div>
+                </div>
+
+                <!-- Current Activities (Highlighted) -->
+                <div class="glass-card p-6 sm:p-8 rounded-2xl border-cyan-500/30 relative overflow-hidden">
+                    <div class="absolute -left-10 -bottom-10 w-40 h-40 bg-cyan-500/10 rounded-full blur-2xl"></div>
+                    <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                        <i class="fa-solid fa-bolt text-yellow-400"></i> النشاط والتركيز الحالي (Current Activity)
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-gray-900/60 border border-gray-800">
+                            <div class="p-2.5 rounded-lg bg-blue-500/10 text-blue-400">
+                                <i class="fa-solid fa-network-wired text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">دراسة شهادة CCNP</h4>
+                                <p class="text-xs text-gray-400 font-inter mt-1">Cisco Certified Network Professional (Self Study)</p>
+                                <p class="text-sm text-gray-300 mt-2">التركيز على التوجيه المتقدم والتحويل وتصميم البنى التحتية الاحترافية للشبكات.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-gray-900/60 border border-gray-800">
+                            <div class="p-2.5 rounded-lg bg-emerald-500/10 text-emerald-400">
+                                <i class="fa-solid fa-language text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">دراسة اللغة الألمانية (Deutsch)</h4>
+                                <p class="text-xs text-gray-400 font-inter mt-1">Online Self-Improvement</p>
+                                <p class="text-sm text-gray-300 mt-2">تطوير مستمر للغة الوصول للمستوى المتوسط والإتقان المهني.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Education & Degrees -->
+        <section id="education" class="scroll-mt-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="p-3 rounded-xl bg-blue-500/10 text-blue-400 text-xl border border-blue-500/20">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white">التعليم والشهادات الأكاديمية</h2>
+                    <p class="text-gray-400 text-sm">Education & Degrees</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Bachelor Degree -->
+                <div class="glass-card p-6 rounded-2xl relative flex flex-col justify-between group hover:-translate-y-1 transition duration-300">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 text-2xl mb-4 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-microchip"></i>
+                        </div>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-blue-500/10 text-blue-400 border border-blue-500/20 font-semibold">المؤهل الرئيسي</span>
+                        <h3 class="text-lg font-bold text-white mt-3 mb-1">بكالوريوس الهندسة</h3>
+                        <p class="text-cyan-400 text-sm font-semibold mb-2">هندسة الاتصالات والإلكترونيات</p>
+                        <p class="text-gray-400 text-sm mb-4">EGI Academy</p>
+                    </div>
+                    <div class="pt-4 border-t border-gray-800/80 flex items-center justify-between text-xs text-gray-300">
+                        <span>التقدير العام:</span>
+                        <span class="px-2 py-1 rounded bg-emerald-500/10 text-emerald-400 font-bold">جيد (Good)</span>
+                    </div>
+                </div>
+
+                <!-- CCNA Cert -->
+                <div class="glass-card p-6 rounded-2xl relative flex flex-col justify-between group hover:-translate-y-1 transition duration-300">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-2xl mb-4 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-network-wired"></i>
+                        </div>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 font-semibold">شهادة متخصصة</span>
+                        <h3 class="text-lg font-bold text-white mt-3 mb-1">CCNA Certificate</h3>
+                        <p class="text-gray-400 text-sm mb-2">Cisco Certified Network Associate</p>
+                        <p class="text-cyan-400 text-sm mb-4">The National Pioneers</p>
+                    </div>
+                    <div class="pt-4 border-t border-gray-800/80 text-xs text-gray-400">
+                        مكتملة بنجاح والتطبيق العملي
+                    </div>
+                </div>
+
+                <!-- AUC English Cert -->
+                <div class="glass-card p-6 rounded-2xl relative flex flex-col justify-between group hover:-translate-y-1 transition duration-300">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 text-2xl mb-4 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-purple-500/10 text-purple-400 border border-purple-500/20 font-semibold">شهادة لغة</span>
+                        <h3 class="text-lg font-bold text-white mt-3 mb-1">English Certificate</h3>
+                        <p class="text-gray-400 text-sm mb-2">الجامعة الأمريكية بالقاهرة</p>
+                        <p class="text-purple-400 text-sm mb-4 font-inter">AUC (Tahrir)</p>
+                    </div>
+                    <div class="pt-4 border-t border-gray-800/80 text-xs text-gray-400">
+                        مكتملة بنجاح
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Courses & Certifications -->
+        <section id="courses" class="scroll-mt-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="p-3 rounded-xl bg-purple-500/10 text-purple-400 text-xl border border-purple-500/20">
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white">الدورات التدريبية والشواهد</h2>
+                    <p class="text-gray-400 text-sm">Courses & Technical Training</p>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Course Item 1 -->
+                <div class="glass-card p-5 sm:p-6 rounded-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <div class="flex items-center gap-4">
+                        <div class="p-3 rounded-xl bg-cyan-500/10 text-cyan-400 text-xl font-bold font-inter">
+                            01
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">دورة الشبكات CCNA</h3>
+                            <p class="text-sm text-gray-400">The National Pioneers - Downtown, Egypt</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 self-end sm:self-center">
+                        <span class="text-xs px-3 py-1.5 rounded-lg bg-gray-800 text-cyan-300 font-inter border border-gray-700">09/2019 - 12/2021</span>
+                    </div>
+                </div>
+
+                <!-- Course Item 2 -->
+                <div class="glass-card p-5 sm:p-6 rounded-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <div class="flex items-center gap-4">
+                        <div class="p-3 rounded-xl bg-blue-500/10 text-blue-400 text-xl font-bold font-inter">
+                            02
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">دورة اللغة الإنجليزية</h3>
+                            <p class="text-sm text-gray-400">The American University in Cairo (AUC) - Tahrir</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 self-end sm:self-center">
+                        <span class="text-xs px-3 py-1.5 rounded-lg bg-gray-800 text-blue-300 font-inter border border-gray-700">04/2015 - 2021</span>
+                    </div>
+                </div>
+
+                <!-- Course Item 3 -->
+                <div class="glass-card p-5 sm:p-6 rounded-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <div class="flex items-center gap-4">
+                        <div class="p-3 rounded-xl bg-indigo-500/10 text-indigo-400 text-xl font-bold font-inter">
+                            03
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">إدارة خوادم الويندوز MCSA</h3>
+                            <p class="text-sm text-gray-400">Microsoft Certified Solutions Associate (Self Study)</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 self-end sm:self-center">
+                        <span class="text-xs px-3 py-1.5 rounded-lg bg-indigo-500/10 text-indigo-300 border border-indigo-500/30">مستمر / الحالي</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Work Experience -->
+        <section id="experience" class="scroll-mt-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="p-3 rounded-xl bg-emerald-500/10 text-emerald-400 text-xl border border-emerald-500/20">
+                    <i class="fa-solid fa-briefcase"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white">الخبرات العملية والمهنية</h2>
+                    <p class="text-gray-400 text-sm">Work Experience</p>
+                </div>
+            </div>
+
+            <!-- Timeline -->
+            <div class="relative border-r-2 border-gray-800 mr-4 sm:mr-6 space-y-8">
+
+                <!-- Job 1 -->
+                <div class="relative pr-6 sm:pr-8">
+                    <div class="absolute -right-[9px] top-1.5 w-4 h-4 rounded-full bg-cyan-400 border-4 border-gray-900"></div>
+                    <div class="glass-card p-6 rounded-2xl">
+                        <div class="flex flex-wrap justify-between items-start gap-2 mb-2">
+                            <h3 class="text-xl font-bold text-white">Receptionist and Co Manager</h3>
+                            <span class="text-xs px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 font-inter">06/2022 - 10/2022</span>
+                        </div>
+                        <p class="text-cyan-400 font-medium text-sm mb-3">Velvet Hotel - Downtown, Egypt</p>
+                        <ul class="text-gray-300 text-sm space-y-2 list-disc list-inside">
+                            <li>إدارة واستقبال الزوار والعملاء وتنظيم عمليات التسكين والإقامة بكل كفاءة.</li>
+                            <li>المشاركة في إدارة العمليات اليومية وتنسيق مهام فريق العمل لضمان جودة الخدمة.</li>
+                            <li>حل المشكلات العاجلة والتعامل مع طلبات العملاء باحترافية عالية.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="relative pr-6 sm:pr-8">
+                    <div class="absolute -right-[9px] top-1.5 w-4 h-4 rounded-full bg-blue-400 border-4 border-gray-900"></div>
+                    <div class="glass-card p-6 rounded-2xl">
+                        <div class="flex flex-wrap justify-between items-start gap-2 mb-2">
+                            <h3 class="text-xl font-bold text-white">Social Manager</h3>
+                            <span class="text-xs px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 font-inter">01/2017 - 06/2017</span>
+                        </div>
+                        <p class="text-blue-400 font-medium text-sm mb-3">Al-Zaman Newspaper - El Doqi, Egypt</p>
+                        <ul class="text-gray-300 text-sm space-y-2 list-disc list-inside">
+                            <li>إدارة قنوات التواصل الاجتماعي وتنسيق نشر المحتوى الصحفي والإخباري.</li>
+                            <li>متابعة التفاعلات وتحليل التواصل مع الجمهور لزيادة المتابعين والتفاعل.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Job 3 -->
+                <div class="relative pr-6 sm:pr-8">
+                    <div class="absolute -right-[9px] top-1.5 w-4 h-4 rounded-full bg-indigo-400 border-4 border-gray-900"></div>
+                    <div class="glass-card p-6 rounded-2xl">
+                        <div class="flex flex-wrap justify-between items-start gap-2 mb-2">
+                            <h3 class="text-xl font-bold text-white">Network Marketing</h3>
+                            <span class="text-xs px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 font-inter">02/2015 - 11/2015</span>
+                        </div>
+                        <p class="text-indigo-400 font-medium text-sm mb-3">Livefree - Cairo, Egypt</p>
+                        <ul class="text-gray-300 text-sm space-y-2 list-disc list-inside">
+                            <li>تطوير استراتيجيات التسويق والعلاقات العامة واكتساب مهارات الإقناع والتواصل الفعال.</li>
+                            <li>بناء وتدريب فرق العمل وتنسيق العروض التقديمية للعملاء.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 6. Languages & Hobbies -->
+        <section id="languages" class="scroll-mt-24 grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <!-- Languages -->
+            <div>
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="p-3 rounded-xl bg-cyan-500/10 text-cyan-400 text-xl border border-cyan-500/20">
+                        <i class="fa-solid fa-language"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-white">اللغات (Languages)</h2>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl space-y-5">
+                    <!-- Arabic -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-bold text-white">اللغة العربية (Arabic)</span>
+                            <span class="text-xs font-semibold text-emerald-400">اللغة الأم (Native)</span>
+                        </div>
+                        <div class="w-full h-2.5 bg-gray-800 rounded-full overflow-hidden">
+                            <div class="h-full bg-emerald-400 rounded-full w-full"></div>
+                        </div>
+                    </div>
+
+                    <!-- English -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-bold text-white">اللغة الإنجليزية (English)</span>
+                            <span class="text-xs font-semibold text-cyan-400">متقدم (A2d / Advanced)</span>
+                        </div>
+                        <div class="w-full h-2.5 bg-gray-800 rounded-full overflow-hidden">
+                            <div class="h-full bg-cyan-400 rounded-full w-[85%]"></div>
+                        </div>
+                    </div>
+
+                    <!-- German -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-bold text-white">اللغة الألمانية (German)</span>
+                            <span class="text-xs font-semibold text-yellow-400">متوسط (Intermediate)</span>
+                        </div>
+                        <div class="w-full h-2.5 bg-gray-800 rounded-full overflow-hidden">
+                            <div class="h-full bg-yellow-400 rounded-full w-[55%]"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hobbies & Interests -->
+            <div>
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="p-3 rounded-xl bg-pink-500/10 text-pink-400 text-xl border border-pink-500/20">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-white">الهوايات والاهتمامات</h2>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl grid grid-cols-2 gap-4">
+                    <!-- Chess -->
+                    <div class="p-4 rounded-xl bg-gray-900/60 border border-gray-800 flex items-center gap-3 hover:border-cyan-500/40 transition">
+                        <div class="w-10 h-10 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-chess"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">الشطرنج</h4>
+                            <p class="text-xs text-gray-400">Chess</p>
+                        </div>
+                    </div>
+
+                    <!-- Reading -->
+                    <div class="p-4 rounded-xl bg-gray-900/60 border border-gray-800 flex items-center gap-3 hover:border-cyan-500/40 transition">
+                        <div class="w-10 h-10 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-book"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">القراءة</h4>
+                            <p class="text-xs text-gray-400">Reading</p>
+                        </div>
+                    </div>
+
+                    <!-- Swimming -->
+                    <div class="p-4 rounded-xl bg-gray-900/60 border border-gray-800 flex items-center gap-3 hover:border-cyan-500/40 transition">
+                        <div class="w-10 h-10 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-person-swimming"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">السباحة</h4>
+                            <p class="text-xs text-gray-400">Swimming</p>
+                        </div>
+                    </div>
+
+                    <!-- Walking -->
+                    <div class="p-4 rounded-xl bg-gray-900/60 border border-gray-800 flex items-center gap-3 hover:border-cyan-500/40 transition">
+                        <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-person-walking"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">المشي</h4>
+                            <p class="text-xs text-gray-400">Walking</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- 7. Contact / Footer Section -->
+        <section id="contact" class="scroll-mt-24">
+            <div class="glass-card rounded-3xl p-8 sm:p-12 border border-cyan-500/30 text-center relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">هل ترغب في التواصل أو العمل معاً؟</h2>
+                <p class="text-gray-300 max-w-xl mx-auto mb-8 text-sm sm:text-base">
+                    يمكنك التواصل معي مباشرة عبر البريد الإلكتروني أو الهاتف المحمول. أرحّب بكافة الفرص المهنية في مجال الاتصالات والشبكات.
+                </p>
+
+                <div class="flex flex-wrap justify-center items-center gap-6 mb-8">
+                    <a href="mailto:abdelrahmanmaghrabyyy@gmail.com" class="px-6 py-3.5 rounded-xl bg-cyan-500 text-black font-bold hover:bg-cyan-400 transition flex items-center gap-3">
+                        <i class="fa-solid fa-paper-plane"></i> إرسال بريد إلكتروني
+                    </a>
+                    <a href="tel:+201127705111" class="px-6 py-3.5 rounded-xl bg-gray-800 text-white font-semibold hover:bg-gray-700 transition flex items-center gap-3 border border-gray-700">
+                        <i class="fa-solid fa-phone text-cyan-400"></i> اتصال تلفوني
+                    </a>
+                </div>
+
+                <div class="pt-8 border-t border-gray-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-4">
+                    <p>© 2026 م. عبد الرحمن مغربي - جميع الحقوق محفوظة.</p>
+                    <div class="flex items-center gap-4">
+                        <span class="hover:text-cyan-400 transition cursor-pointer">Cairo, Egypt</span>
+                        <span>•</span>
+                        <span class="hover:text-cyan-400 transition cursor-pointer">Electronic & Communication Engineer</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- JavaScript for Menu Toggle and Smooth Interactivity -->
+    <script>
+        // Toggle Mobile Menu
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on clicking links
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
